@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-const Header = ({title}) => {
+const Header = ({ title }) => {
     return (
         <header>
-            <h1>{title}</h1>
+            <h1 style={{ color: 'red',backgroundColor: 'black' }}>{title}</h1>
         </header>
     )
 }
