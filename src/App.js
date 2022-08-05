@@ -5,7 +5,7 @@ import Header from "./components/Header";
 function App() {
   return (
     <div className="container">
-      <Header />//if you remove the title, it will show the default title
+      <Header />{/* if you remove the title(title:"blablabla"), it will show the default title */}
     </div>
   );
 }
