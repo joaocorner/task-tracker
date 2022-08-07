@@ -1,25 +1,29 @@
-const tasks = [
-    {
-        id: 1,
-        text: 'Do the laundry',
-        day: 'Feb 5th at 5:00pm',
-        reminder: true,
-    },
-    {
-        id: 2,
-        text: 'Do the dishes',
-        day: 'Feb 7th at 1:00pm',
-        reminder: true,
-    },
-    {
-        id: 3,
-        text: 'Make breakfast',
-        day: 'Feb 8th at 8:30am',
-        reminder: false,
-    }
-]
+import { useState } from 'react';
 
 const Tasks = () => {
+    const [tasks, setTasks] = useState(// useState is a hook that allows you to manage the state of a component
+        [
+            {
+                id: 1,
+                text: 'Do the laundry',
+                day: 'Feb 5th at 5:00pm',
+                reminder: true,
+            },
+            {
+                id: 2,
+                text: 'Do the dishes',
+                day: 'Feb 7th at 1:00pm',
+                reminder: true,
+            },
+            {
+                id: 3,
+                text: 'Make breakfast',
+                day: 'Feb 8th at 8:30am',
+                reminder: false,
+            }
+        ]
+    )
+
     return (
         <>
             {tasks.map((task) => (
