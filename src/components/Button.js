@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';// PropTypes are used to validate props passed to components and to help prevent bugs
+import PropTypes from 'prop-types';
 
-const Button = ({ color, text, onClick }) => { // color and text are props
-
+const Button = ({ color, text, onClick }) => {
     return (
         <button
             onClick={onClick}

@@ -16,17 +16,11 @@ const Header = ({ title }) => {
 }
 
 Header.defaultProps = {
-    title: 'Task Tracker', // default title
+    title: 'Task Tracker',
 }
 
 Header.propTypes = {
     title: PropTypes.string.isRequired,
 }
-
-// CSS in JS
-// const headingStyle = {
-//     color: 'red',
-//     backgroundColor: 'black'
-// }
 
 export default Header
