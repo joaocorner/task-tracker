@@ -1,11 +1,13 @@
 //import React from "react"; // if you are using class instead of function
 
 import Header from "./components/Header";
+import Tasks from "./components/Tasks";
 
 function App() {
   return (
     <div className="container">
       <Header />{/* if you remove the title(title:"blablabla"), it will show the default title */}
+      <Tasks />
     </div>
   );
 }
