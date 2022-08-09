@@ -34,7 +34,7 @@ const App = () => {
 
   // Toggle Reminder
   const toggleReminder = (id) => {
-    console.log(id)
+    setTasks(tasks.map((task) => (task.id === id ? { ...task, reminder: !task.reminder } : task)))
   }
 
   return (
@@ -46,7 +46,7 @@ const App = () => {
           onDelete={deleteTask}
           onToggle={toggleReminder}
         />
-      :
+        :
         ' No tasks to display'}
     </div>
   );
