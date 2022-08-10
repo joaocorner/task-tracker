@@ -7,15 +7,22 @@ const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    const fetchTasks = async () => {
-      const res = await fetch("http://localhost:5000/tasks");
-      const data = await res.json();
-
-      console.log(data);
+  useEffect(() => {// useEffect is a hook that runs after the component has been rendered
+    const getTasks = async () => {// async is a keyword that tells the function to return a promise. Promise is a special type of object that represents the result of an asynchronous operation.
+      const tasksFromServer = await fetchTasks();//Await waits for the promise to resolve before continuing. 
+      setTasks(tasksFromServer);//setTasks is a function that sets the state of the tasks array to the tasks array from the server.
     };
-    fetchTasks();
-  }, []);
+
+    getTasks();
+  }, []);// [] is an empty array. The empty array tells the useEffect hook to run only once.
+
+  // Fetch tasks
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:5000/tasks");
+    const data = await res.json();
+
+    return data;
+  };
 
   // Add Task
   const addTask = (task) => {
