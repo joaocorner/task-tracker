@@ -27,10 +27,23 @@ const App = () => {
   };
 
   // Add Task
-  const addTask = (task) => {
-    const id = Math.floor(Math.random() * 1000000) + 1;
-    const newTask = { id, ...task };
-    setTasks([...tasks, newTask]);
+  const addTask = async (task) => {
+    const res = await fetch("http://localhost:5000/tasks", {
+      method: "POST", //POST is a method that sends data to the server.
+      headers: {
+        //headers is an object that contains the headers of the request.
+        "Content-Type": "application/json", //Content-Type is a header that tells the server what kind of data is being sent.
+      },
+      body: JSON.stringify(task), //body is the data that is being sent to the server. JSON.stringify converts the data to a string.
+    });
+
+    const data = await res.json(); //data is the response from the server.
+
+    setTasks([...tasks, data]);
+
+    // const id = Math.floor(Math.random() * 1000000) + 1;
+    // const newTask = { id, ...task };
+    // setTasks([...tasks, newTask]);
   };
 
   // Delete Task
