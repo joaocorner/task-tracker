@@ -26,8 +26,9 @@ const App = () => {
 
   // Add Task
   const addTask = (task) => {
-    console.log(task);
-  };
+    const id = Math.floor(Math.random() * 1000000)+1;
+    const newTask = { ...task, id };
+    setTasks([...tasks, newTask]);
 
   // Delete Task
   const deleteTask = async(id) => {
